@@ -1,6 +1,6 @@
 module.exports = {
-  extends: ["stylelint-config-standard"],
+  extends: ['stylelint-config-standard'],
   rules: {
-    "selector-class-pattern": null
-  }
+    'selector-class-pattern': null,
+  },
 };

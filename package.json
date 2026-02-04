@@ -14,7 +14,7 @@
   "dependencies": {
     "dotenv": "^16.x",
     "ejs": "^3.x",
-    "express": "^4.x",
+    "express": "^4.22.1",
     "express-session": "^1.x"
   },
   "devDependencies": {
@@ -25,9 +25,13 @@
     "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.54.0",
     "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.3.0",
     "jiti": "^2.6.1",
     "nodemon": "^3.x",
+    "prettier": "^3.8.1",
     "stylelint": "^17.1.1",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-scss": "^7.0.0",

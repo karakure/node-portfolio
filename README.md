@@ -30,17 +30,25 @@ Node.js 20 を使用していますが、ローカル環境の Node.js バージ
 
 ## ディレクトリ構成（抜粋）
 
-```text
 node-portfolio/
-├─ src/              # アプリケーション本体（TypeScript）
-│  └─ server.ts
-├─ docker-compose.yml
 ├─ Dockerfile
-├─ tsconfig.json
-├─ eslint.config.mts
+├─ docker-compose.yml
 ├─ package.json
-├─ README.md
-```
+├─ package-lock.json
+├─ tsconfig.json
+├─ .dockerignore
+├─ .env.example
+├─ src/         # アプリケーション本体（TypeScript）
+│   ├─ app.ts
+│   ├─ server.ts
+│   ├─ controllers/
+│   ├─ routes/
+│   ├─ services/
+│   └─ views/
+├─ dist/        # 本番ビルド時に生成
+├─ node_modules/ # ホスト側は無視、コンテナ内で保持
+├─ tests/
+└─ README.md
 
 
 ## 2. 手順（通常）

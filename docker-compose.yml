@@ -1,8 +1,15 @@
+version: '3.9'
+
 services:
   app:
-    build: .
+    build:
+      context: .
+      target: dev # dev or prod に切り替え可能
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
-      - .:/app
+      - .:/app # ソースコードをリアルタイム反映
+      - /app/node_modules # コンテナ内依存を保持
+    environment:
+      - NODE_ENV=development
     command: npm run dev

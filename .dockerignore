@@ -1,0 +1,19 @@
+# Node.js の依存関係は除外
+node_modules
+dist
+
+# Git 関連
+.git
+.gitignore
+
+# Docker 関連で不要
+.dockerignore
+
+# 環境変数サンプル
+.env.example
+
+# テストやエディタ関連
+tests
+.vscode
+.idea
+*.log
