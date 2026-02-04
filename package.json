@@ -5,7 +5,11 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:style -- --fix",
+    "lint:js": "eslint .",
+    "lint:style": "stylelint \"**/*.{css,scss}\""
   },
   "dependencies": {
     "dotenv": "^16.x",
@@ -14,16 +18,22 @@
     "express-session": "^1.x"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "@types/express": "^5.0.6",
     "@types/express-session": "^1.18.2",
     "@types/node": "^25.2.0",
     "@typescript-eslint/eslint-plugin": "^8.54.0",
     "@typescript-eslint/parser": "^8.54.0",
     "eslint": "^9.39.2",
+    "globals": "^17.3.0",
+    "jiti": "^2.6.1",
     "nodemon": "^3.x",
-    "stylelint": "^17.1.0",
+    "stylelint": "^17.1.1",
     "stylelint-config-standard": "^40.0.0",
+    "stylelint-scss": "^7.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
   }
 }

@@ -1,24 +1,37 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
+import { defineConfig } from 'eslint/config';
+import js from '@eslint/js';
+import globals from 'globals';
+
+const nodeGlobals = globals.node;
 
 export default defineConfig([
-  // JavaScript（Node.js）
+  /* =========================
+   * JavaScript（Node.js）
+   * ========================= */
   {
-    files: ["**/*.{js,cjs,mjs}"],
+    files: ['**/*.{js,cjs,mjs}'],
     languageOptions: {
-      globals: globals.node,
+      globals: nodeGlobals,
     },
-    extends: [js.configs.recommended],
+    rules: js.configs.recommended.rules,
   },
 
-  // TypeScript（Node.js）
-  ...tseslint.configs.recommended.map((config) => ({
-    ...config,
-    files: ["**/*.{ts,cts,mts}"],
+  /* =========================
+   * TypeScript（Node.js）
+   * ========================= */
+  {
+    files: ['**/*.{ts,cts,mts,d.ts}'],
     languageOptions: {
-      globals: globals.node,
+      parser: '@typescript-eslint/parser',
+      globals: nodeGlobals,
     },
-  })),
+    extends: ['plugin:@typescript-eslint/recommended'],
+  },
+
+  /* =========================
+   * ESLint 設定ファイル除外
+   * ========================= */
+  {
+    ignores: ['eslint.config.*', 'node_modules', 'dist'],
+  },
 ]);
